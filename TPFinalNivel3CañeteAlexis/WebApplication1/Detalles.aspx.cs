@@ -23,7 +23,14 @@ namespace WebApplication1
             TxtDescripcion.Text = Articulo.Descripcion;
             TxtMarca.Text = Articulo.Marca.Descripcion;
             TxtCategoria.Text = Articulo.Categoria.Descripcion;
-            TxtPrecio.Text = Articulo.Precio.ToString();           
+            TxtPrecio.Text = Articulo.Precio.ToString();
+            TxtImagen.Text = Articulo.ImagenUrl;
+            TxtImagen_TextChanged(sender, e);
+        }
+
+        protected void TxtImagen_TextChanged(object sender, EventArgs e)
+        {
+            ImgImagen.ImageUrl = TxtImagen.Text;
         }
     }
 }

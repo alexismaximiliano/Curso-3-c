@@ -1,5 +1,8 @@
-﻿using System;
+﻿using dominio;
+using Funciones;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,6 +13,7 @@ namespace WebApplication1
 {
     public partial class pruebas : System.Web.UI.Page
     {
+        public List<Articulos> ListaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,14 +21,21 @@ namespace WebApplication1
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("default.aspx", false);
-            //probar imagen perfil con url
-            //input solo funciona en chrome
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void DdlCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnObtenerID_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

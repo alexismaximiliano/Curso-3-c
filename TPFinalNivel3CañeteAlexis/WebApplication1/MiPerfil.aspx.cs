@@ -45,10 +45,9 @@ namespace WebApplication1
                 Users usuario = (Users)Session["Usuario"];
                 if (TxtImagen.PostedFile.FileName != "")
                 {
-
                 string ruta = Server.MapPath("./Images/");
                 TxtImagen.PostedFile.SaveAs(ruta + "perfil-" + usuario.Id+".jpg");
-                usuario.UrlImagenPerfil = "perfil" + usuario.Id + ".jpg";
+                usuario.UrlImagenPerfil = "perfil-" + usuario.Id + ".jpg";
                 }
                 usuario.Nombre = TxtNombre.Text;
                 usuario.Apellido = TxtApellido.Text;

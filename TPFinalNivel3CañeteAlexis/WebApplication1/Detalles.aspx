@@ -37,13 +37,13 @@
                 <asp:TextBox runat="server" ID="TxtCategoria" ReadOnly="true" Text="" CssClass="form-control" disabled="true" />
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" id="Foto">
             <div class="mb-3">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
-                        <label class="form-label">Url de Imagen</label>
-                        <asp:TextBox runat="server" CssClass="form-control"
-                            ID="TxtImagen" AutoPostBack="true" />
+                        <label class="form-label visually-hidden">Url de Imagen</label>
+                        <asp:TextBox runat="server" CssClass="form-control visually-hidden"
+                            ID="TxtImagen" AutoPostBack="true" OnTextChanged="TxtImagen_TextChanged" />
                         </div>
                     <asp:Image ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
                         runat="server" ID="ImgImagen" Width="70%" />

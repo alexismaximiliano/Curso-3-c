@@ -11,16 +11,25 @@ namespace WebApplication1
 {
 
 
-    public partial class pruebas
+    public partial class Favoritos
     {
 
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control SciptManager1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.ScriptManager SciptManager1;
+
+        /// <summary>
+        /// Control RepArticulos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepArticulos;
     }
 }

@@ -39,25 +39,7 @@
                 <asp:DropDownList ID="DdlCategoria" runat="server" CssClass="form-select"></asp:DropDownList>
             </div>
         </div>
-        <div id="Botones">
-            <div class="mb-3">
-                <asp:Button Text="Aceptar" ID="BtnAceptar" CssClass="btn btn-primary" OnClick="BtnAceptar_Click" runat="server" />
-                <a href="ListaArticulos.aspx">Cancelar</a>
-                <div class="row">
-                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                        <ContentTemplate>
-                            <asp:Button Text="Eliminar" ID="BtnEliminar" CssClass="btn btn-outline-danger" OnClick="BtnEliminar_Click" runat="server" />
-                            <% if (ConfirmacionEliminar)
-                                {%>
-                            <asp:CheckBox Text="Confirmar Eliminacion ?" ID="ChkConfirmacionEliminacion" runat="server" />
-                            <asp:Button Text="Eliminar" ID="BtnConfirmadoEliminar" CssClass="btn btn-danger" OnClick="BtnConfirmadoEliminar_Click" runat="server" />
-                            <%}%>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </div>
-            </div>
-        </div>
-        <div id="Imagen" class="col-4">
+        <div class="col-4" id="Imagen">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <div class="mb-3">
@@ -70,5 +52,29 @@
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
+        <div id="Botones">
+            <div class="mb-3">
+                <asp:Button Text="Aceptar" ID="BtnAceptar" CssClass="btn btn-primary" OnClick="BtnAceptar_Click" runat="server" />
+                <a href="ListaArticulos.aspx">Cancelar</a>
+                <div class="row">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <% string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
+                                if (id != "" && !IsPostBack)
+                                {  %>
+                            <asp:Button Text="Eliminar" ID="BtnEliminar" CssClass="btn btn-outline-danger" OnClick="BtnEliminar_Click" runat="server" />
+                            <% if (ConfirmacionEliminar)
+                                {%>
+                            <asp:CheckBox Text="Confirmar Eliminacion ?" ID="ChkConfirmacionEliminacion" runat="server" />
+                            <asp:Button Text="Eliminar" ID="BtnConfirmadoEliminar" CssClass="btn btn-danger" OnClick="BtnConfirmadoEliminar_Click" runat="server" />
+                            <%}
+                                }%>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+        </div>
     </div>
 </asp:Content>
+
+

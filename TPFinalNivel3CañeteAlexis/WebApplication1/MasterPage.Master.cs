@@ -13,8 +13,8 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImgAvatar.ImageUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
-            if (!(Page is Login || Page is Default || Page is Registrarse||Page is Error||Page is Detalles))
+            //ImgAvatar.ImageUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
+            if (!(Page is Login || Page is Default || Page is Registrarse || Page is Error || Page is Detalles))
             {
                 if (!Seguridad.SessionActiva(Session["Usuario"]))
                     Response.Redirect("login.aspx", false);
@@ -23,7 +23,7 @@ namespace WebApplication1
                     Users Usuario = (Users)Session["Usuario"];
                     //LblNombre.Text = Usuario.Nombre;
                     if (!string.IsNullOrEmpty(Usuario.UrlImagenPerfil))
-                        ImgAvatar.ImageUrl = "~/Images/" + Usuario.UrlImagenPerfil;
+                    ImgAvatar.ImageUrl = "~/Images/" + Usuario.UrlImagenPerfil;
                 }
             }
             //if (Seguridad.SessionActiva(Session["Usuario"]))
